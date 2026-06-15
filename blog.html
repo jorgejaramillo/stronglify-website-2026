@@ -1,0 +1,300 @@
+<html lang="es" class="scroll-smooth"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | Stronglify</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet">
+<style>
+body { font-family: 'Geist', sans-serif; }
+.font-mono-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+}
+</style>
+</head>
+<body class="bg-white text-[#111827] antialiased selection:bg-[#8B5CF6] selection:text-white">
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="fixed top-0 left-0 w-full z-50 px-6 py-2 md:px-10 flex justify-between items-center text-[#111827] bg-white border-b border-[#E5E7EB] shadow-sm">
+        <a href="index.html"><img src="https://stronglify-1.s3.sa-east-1.amazonaws.com/img/logo-new-brand-stronglify-alpha.svg" alt="Stronglify" class="h-12"></a>
+        <div class="hidden md:flex items-center gap-8">
+            <div class="relative group">
+                <button class="flex items-center gap-1.5 text-base font-normal tracking-tight hover:text-[#8B5CF6] transition-colors">
+                    Producto
+                    <svg class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div class="absolute left-0 top-full pt-3 hidden group-hover:block">
+                    <div class="bg-white border border-[#E5E7EB] rounded-[8px] shadow-xl shadow-[#8B5CF6]/10 p-2 min-w-[200px]">
+                        <a href="index.html#features" class="flex items-center gap-3 px-4 py-3 rounded-[8px] hover:bg-[#F5F3FF] transition-colors">
+                            <div><p class="text-base font-normal text-[#111827]">Landings SEO</p><p class="text-sm text-[#4B5563]">Páginas optimizadas</p></div>
+                        </a>
+                        <a href="index.html#features" class="flex items-center gap-3 px-4 py-3 rounded-[8px] hover:bg-[#F5F3FF] transition-colors">
+                            <div><p class="text-base font-normal text-[#111827]">Blogs</p><p class="text-sm text-[#4B5563]">Contenido indexable</p></div>
+                        </a>
+                        <a href="index.html#features" class="flex items-center gap-3 px-4 py-3 rounded-[8px] hover:bg-[#F5F3FF] transition-colors">
+                            <div><p class="text-base font-normal text-[#111827]">Tiendas</p><p class="text-sm text-[#4B5563]">Catálogos optimizados</p></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <a href="index.html#casos" class="text-base font-normal tracking-tight hover:text-[#8B5CF6] transition-colors">Casos de uso</a>
+            <a href="index.html#usecases" class="text-base font-normal tracking-tight hover:text-[#8B5CF6] transition-colors">Precios</a>
+            <a href="blog.html" class="text-base font-normal tracking-tight text-[#8B5CF6]">Blog</a>
+        </div>
+        <div class="flex items-center gap-4">
+            <a href="https://stronglify.com" class="hidden md:block text-base font-normal tracking-tight bg-[#56ffd4] text-[#111827] px-6 py-2 rounded-full hover:bg-[#2eedd9] transition-colors shadow-md shadow-[#45cf92]/20">Crear cuenta</a>
+            <button id="menuToggle" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Menú">
+                <span class="block w-6 h-0.5 bg-[#111827] transition-all duration-300" id="ham1"></span>
+                <span class="block w-6 h-0.5 bg-[#111827] transition-all duration-300" id="ham2"></span>
+                <span class="block w-6 h-0.5 bg-[#111827] transition-all duration-300" id="ham3"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="fixed inset-0 z-40 bg-white flex flex-col px-6 py-6 translate-x-full transition-transform duration-300 ease-in-out">
+        <div class="flex justify-end items-center mb-10">
+            <button id="menuClose" class="p-2" aria-label="Cerrar">
+                <svg class="w-6 h-6 text-[#111827]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+        <div class="flex flex-col gap-1 flex-1">
+            <a href="index.html#casos" class="text-2xl font-normal px-4 py-4 rounded-[8px] hover:bg-[#F5F3FF] text-[#111827] transition-colors" onclick="closeMenu()">Casos de uso</a>
+            <a href="index.html#usecases" class="text-2xl font-normal px-4 py-4 rounded-[8px] hover:bg-[#F5F3FF] text-[#111827] transition-colors" onclick="closeMenu()">Precios</a>
+            <a href="blog.html" class="text-2xl font-normal px-4 py-4 rounded-[8px] hover:bg-[#F5F3FF] text-[#8B5CF6] transition-colors" onclick="closeMenu()">Blog</a>
+        </div>
+        <a href="https://stronglify.com" class="mt-6 bg-[#56ffd4] text-[#111827] text-xl font-normal text-center py-5 rounded-full hover:bg-[#2eedd9] transition-colors shadow-lg">Crear cuenta gratis</a>
+    </div>
+    <script>
+        const toggle = document.getElementById('menuToggle');
+        const menu   = document.getElementById('mobileMenu');
+        const ham1   = document.getElementById('ham1');
+        const ham2   = document.getElementById('ham2');
+        const ham3   = document.getElementById('ham3');
+        toggle.addEventListener('click', () => {
+            menu.classList.toggle('translate-x-full');
+            const open = !menu.classList.contains('translate-x-full');
+            ham1.style.transform = open ? 'translateY(8px) rotate(45deg)' : '';
+            ham2.style.opacity   = open ? '0' : '1';
+            ham3.style.transform = open ? 'translateY(-8px) rotate(-45deg)' : '';
+        });
+        document.getElementById('menuClose').addEventListener('click', closeMenu);
+        function closeMenu() {
+            menu.classList.add('translate-x-full');
+            ham1.style.transform = '';
+            ham2.style.opacity   = '1';
+            ham3.style.transform = '';
+        }
+    </script>
+
+    <!-- ─────────────────────────────────────────── -->
+    <!-- MAIN                                        -->
+    <!-- ─────────────────────────────────────────── -->
+    <main class="pt-20">
+
+        <!-- Blog Header -->
+        <section class="bg-white py-16 md:py-24 border-b border-[#E5E7EB]">
+            <div class="max-w-screen-xl mx-auto px-6 md:px-12">
+                <span class="font-mono-label text-[#8B5CF6] uppercase tracking-wider">Blog</span>
+                <h1 class="mt-4 text-5xl md:text-6xl font-medium tracking-tight text-[#111827] leading-tight">Recursos sobre SEO programático.</h1>
+                <p class="mt-6 text-xl text-[#4B5563] font-normal leading-relaxed max-w-2xl">Guías, casos de uso, y estrategias para hacer crecer tu presencia orgánica con Stronglify.</p>
+            </div>
+        </section>
+
+        <!-- Featured Post -->
+        <section class="bg-white py-16">
+            <div class="max-w-screen-xl mx-auto px-6 md:px-12">
+                <a href="article.html" class="group grid grid-cols-1 lg:grid-cols-2 gap-8 rounded-[8px] border border-[#E5E7EB] overflow-hidden hover:border-[#8B5CF6] transition-colors shadow-sm hover:shadow-md">
+                    <div class="aspect-video lg:aspect-auto overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?q=80&w=900&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Featured post">
+                    </div>
+                    <div class="p-8 lg:p-12 flex flex-col justify-center">
+                        <div class="flex items-center gap-3 mb-6">
+                            <span class="font-mono-label text-[#8B5CF6] uppercase tracking-wider bg-[#F5F3FF] px-3 py-1 rounded-full">Destacado</span>
+                            <span class="font-mono-label text-[#4B5563] uppercase tracking-wider">SEO Programático</span>
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-[#111827] leading-snug">Cómo escalar de 0 a 10,000 páginas indexadas en 90 días.</h2>
+                        <p class="mt-4 text-lg text-[#4B5563] font-normal leading-relaxed">Un caso de estudio real con una agencia SEO en Colombia que multiplicó su tráfico orgánico usando Stronglify.</p>
+                        <div class="mt-8 flex items-center gap-4">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=80&auto=format&fit=crop" class="w-10 h-10 rounded-full object-cover" alt="Author">
+                            <div>
+                                <p class="text-base font-medium text-[#111827]">Jorge Jaramillo</p>
+                                <p class="text-sm text-[#4B5563]">15 de junio, 2026 · 8 min lectura</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Post Grid -->
+        <section class="bg-[#F8F7FF] py-16 border-t border-[#E5E7EB]">
+            <div class="max-w-screen-xl mx-auto px-6 md:px-12">
+                <div class="flex items-center justify-between mb-10">
+                    <span class="font-mono-label text-[#8B5CF6] uppercase tracking-wider">Todos los artículos</span>
+                    <!-- Category filters -->
+                    <div class="hidden sm:flex gap-2">
+                        <button class="font-mono-label uppercase tracking-wider bg-[#8B5CF6] text-white px-4 py-2 rounded-full text-xs">Todos</button>
+                        <button class="font-mono-label uppercase tracking-wider bg-white border border-[#E5E7EB] text-[#4B5563] hover:border-[#8B5CF6] hover:text-[#8B5CF6] px-4 py-2 rounded-full text-xs transition-colors">SEO</button>
+                        <button class="font-mono-label uppercase tracking-wider bg-white border border-[#E5E7EB] text-[#4B5563] hover:border-[#8B5CF6] hover:text-[#8B5CF6] px-4 py-2 rounded-full text-xs transition-colors">Producto</button>
+                        <button class="font-mono-label uppercase tracking-wider bg-white border border-[#E5E7EB] text-[#4B5563] hover:border-[#8B5CF6] hover:text-[#8B5CF6] px-4 py-2 rounded-full text-xs transition-colors">Casos de uso</button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Post card -->
+                    <a href="article.html" class="group bg-white rounded-[8px] border border-[#E5E7EB] overflow-hidden hover:border-[#8B5CF6] hover:shadow-md transition-all shadow-sm flex flex-col">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Post">
+                        </div>
+                        <div class="p-6 flex flex-col flex-1">
+                            <span class="font-mono-label text-[#8B5CF6] uppercase tracking-wider">SEO Local</span>
+                            <h3 class="mt-3 text-xl font-medium text-[#111827] leading-snug">SEO local para negocios con múltiples sucursales: la guía definitiva.</h3>
+                            <p class="mt-2 text-sm text-[#4B5563] leading-relaxed flex-1">Aprende a dominar los resultados locales en cada ciudad donde operas sin duplicar contenido.</p>
+                            <p class="mt-4 text-sm text-[#4B5563]">10 jun 2026 · 6 min</p>
+                        </div>
+                    </a>
+                    <a href="article.html" class="group bg-white rounded-[8px] border border-[#E5E7EB] overflow-hidden hover:border-[#8B5CF6] hover:shadow-md transition-all shadow-sm flex flex-col">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Post">
+                        </div>
+                        <div class="p-6 flex flex-col flex-1">
+                            <span class="font-mono-label text-[#8B5CF6] uppercase tracking-wider">E-commerce</span>
+                            <h3 class="mt-3 text-xl font-medium text-[#111827] leading-snug">Páginas de categoría que ranquean: estructura y contenido.</h3>
+                            <p class="mt-2 text-sm text-[#4B5563] leading-relaxed flex-1">Cómo construir páginas de categoría que Google ama y que convierten a compradores.</p>
+                            <p class="mt-4 text-sm text-[#4B5563]">5 jun 2026 · 5 min</p>
+                        </div>
+                    </a>
+                    <a href="article.html" class="group bg-white rounded-[8px] border border-[#E5E7EB] overflow-hidden hover:border-[#8B5CF6] hover:shadow-md transition-all shadow-sm flex flex-col">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Post">
+                        </div>
+                        <div class="p-6 flex flex-col flex-1">
+                            <span class="font-mono-label text-[#8B5CF6] uppercase tracking-wider">Producto</span>
+                            <h3 class="mt-3 text-xl font-medium text-[#111827] leading-snug">Automatización de contenido SEO con IA: lo que funciona en 2026.</h3>
+                            <p class="mt-2 text-sm text-[#4B5563] leading-relaxed flex-1">Qué tareas de contenido puedes delegar a la IA hoy y cuáles todavía necesitan criterio humano.</p>
+                            <p class="mt-4 text-sm text-[#4B5563]">1 jun 2026 · 7 min</p>
+                        </div>
+                    </a>
+                    <a href="article.html" class="group bg-white rounded-[8px] border border-[#E5E7EB] overflow-hidden hover:border-[#8B5CF6] hover:shadow-md transition-all shadow-sm flex flex-col">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Post">
+                        </div>
+                        <div class="p-6 flex flex-col flex-1">
+                            <span class="font-mono-label text-[#8B5CF6] uppercase tracking-wider">SEO</span>
+                            <h3 class="mt-3 text-xl font-medium text-[#111827] leading-snug">Internal linking a escala: cómo distribuir autoridad entre miles de páginas.</h3>
+                            <p class="mt-2 text-sm text-[#4B5563] leading-relaxed flex-1">La estrategia de enlaces internos que usamos para sitios con más de 50,000 URLs.</p>
+                            <p class="mt-4 text-sm text-[#4B5563]">28 may 2026 · 9 min</p>
+                        </div>
+                    </a>
+                    <a href="article.html" class="group bg-white rounded-[8px] border border-[#E5E7EB] overflow-hidden hover:border-[#8B5CF6] hover:shadow-md transition-all shadow-sm flex flex-col">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Post">
+                        </div>
+                        <div class="p-6 flex flex-col flex-1">
+                            <span class="font-mono-label text-[#8B5CF6] uppercase tracking-wider">Casos de uso</span>
+                            <h3 class="mt-3 text-xl font-medium text-[#111827] leading-snug">Caso de estudio: agencia triplicó clientes en 6 meses con SEO programático.</h3>
+                            <p class="mt-2 text-sm text-[#4B5563] leading-relaxed flex-1">Cómo una agencia mediana en México usó Stronglify para escalar sin contratar más redactores.</p>
+                            <p class="mt-4 text-sm text-[#4B5563]">20 may 2026 · 10 min</p>
+                        </div>
+                    </a>
+                    <a href="article.html" class="group bg-white rounded-[8px] border border-[#E5E7EB] overflow-hidden hover:border-[#8B5CF6] hover:shadow-md transition-all shadow-sm flex flex-col">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Post">
+                        </div>
+                        <div class="p-6 flex flex-col flex-1">
+                            <span class="font-mono-label text-[#8B5CF6] uppercase tracking-wider">Producto</span>
+                            <h3 class="mt-3 text-xl font-medium text-[#111827] leading-snug">Stronglify 2.0: nuevas plantillas, editor visual y más velocidad.</h3>
+                            <p class="mt-2 text-sm text-[#4B5563] leading-relaxed flex-1">Todo lo nuevo en la versión 2.0 de la plataforma: qué cambia y cómo migrar en minutos.</p>
+                            <p class="mt-4 text-sm text-[#4B5563]">12 may 2026 · 4 min</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Pagination -->
+                <div class="flex justify-center gap-2 mt-16">
+                    <button class="w-10 h-10 rounded-[8px] bg-[#8B5CF6] text-white font-medium flex items-center justify-center">1</button>
+                    <button class="w-10 h-10 rounded-[8px] border border-[#E5E7EB] bg-white text-[#4B5563] hover:border-[#8B5CF6] hover:text-[#8B5CF6] font-medium flex items-center justify-center transition-colors">2</button>
+                    <button class="w-10 h-10 rounded-[8px] border border-[#E5E7EB] bg-white text-[#4B5563] hover:border-[#8B5CF6] hover:text-[#8B5CF6] font-medium flex items-center justify-center transition-colors">3</button>
+                    <button class="w-10 h-10 rounded-[8px] border border-[#E5E7EB] bg-white text-[#4B5563] hover:border-[#8B5CF6] hover:text-[#8B5CF6] font-medium flex items-center justify-center transition-colors">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <!-- ─────────────────────────────────────────── -->
+    <!-- END MAIN                                    -->
+    <!-- ─────────────────────────────────────────── -->
+
+    <!-- Footer -->
+    <footer id="newsletter" class="relative overflow-hidden bg-white text-[#111827] px-6 py-16 md:px-12 md:py-24 border-t border-[#E5E7EB]">
+        <div class="absolute inset-0 w-full h-full pointer-events-none" style="filter: blur(60px);">
+            <div class="absolute rounded-full" style="width:60%;height:60%;top:10%;left:-10%;background:radial-gradient(circle at center,rgba(86,255,212,0.25) 0,rgba(86,255,212,0) 70%);animation:moveHorizontal 40s ease infinite;"></div>
+            <div class="absolute rounded-full" style="width:50%;height:50%;top:30%;right:-5%;background:radial-gradient(circle at center,rgba(6,182,212,0.2) 0,rgba(6,182,212,0) 70%);animation:moveInCircle 30s reverse infinite;"></div>
+            <div class="absolute rounded-full" style="width:40%;height:40%;bottom:0;left:30%;background:radial-gradient(circle at center,rgba(86,255,212,0.18) 0,rgba(86,255,212,0) 70%);animation:moveVertical 35s ease infinite;"></div>
+        </div>
+        <style>
+        @keyframes moveVertical { 0%{transform:translateY(-50%)} 50%{transform:translateY(50%)} 100%{transform:translateY(-50%)} }
+        @keyframes moveInCircle { 0%{transform:rotate(0deg)} 50%{transform:rotate(180deg)} 100%{transform:rotate(360deg)} }
+        @keyframes moveHorizontal { 0%{transform:translateX(-50%) translateY(-10%)} 50%{transform:translateX(50%) translateY(10%)} 100%{transform:translateX(-50%) translateY(-10%)} }
+        </style>
+        <div class="relative z-10 max-w-screen-2xl mx-auto">
+            <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-12 border-b border-[#E5E7EB] pb-16">
+                <h2 class="text-4xl md:text-5xl font-medium tracking-tight max-w-2xl leading-tight text-[#111827]">Crea tu sitio web optimizado para SEO o agenda una consulta con nuestro equipo para saber más.</h2>
+                <div class="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
+                    <a href="https://stronglify.com" class="bg-[#56ffd4] text-[#111827] hover:bg-[#2eedd9] rounded-full px-8 py-4 text-lg font-normal text-center transition-all shadow-md">Empezar gratis</a>
+                    <a href="index.html#usecases" class="border border-[#E5E7EB] bg-white hover:bg-[#8B5CF6] hover:border-[#8B5CF6] hover:text-white rounded-full px-8 py-4 text-lg font-normal text-center transition-all shadow-sm">Ver demo</a>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 py-16">
+                <div class="col-span-2 lg:col-span-1 flex flex-col gap-5">
+                    <span class="font-mono-label text-[#8B5CF6] mb-2 uppercase tracking-wider">Empresa</span>
+                    <a href="page.html" class="text-xl font-normal text-[#4B5563] hover:text-[#8B5CF6] transition-colors">Nosotros</a>
+                    <a href="#" class="text-xl font-normal text-[#4B5563] hover:text-[#8B5CF6] transition-colors">Contacto</a>
+                    <a href="#" class="text-xl font-normal text-[#4B5563] hover:text-[#8B5CF6] transition-colors">Roadmap</a>
+                </div>
+                <div class="col-span-2 lg:col-span-1 flex flex-col gap-5">
+                    <span class="font-mono-label text-[#8B5CF6] mb-2 uppercase tracking-wider">Producto</span>
+                    <a href="#" class="text-xl font-normal text-[#4B5563] hover:text-[#8B5CF6] transition-colors">SEO Local</a>
+                    <a href="#" class="text-xl font-normal text-[#4B5563] hover:text-[#8B5CF6] transition-colors">Tiendas</a>
+                    <a href="#" class="text-xl font-normal text-[#4B5563] hover:text-[#8B5CF6] transition-colors">Blogs</a>
+                </div>
+                <div class="col-span-2 lg:col-span-1 flex flex-col gap-5">
+                    <span class="font-mono-label text-[#8B5CF6] mb-2 uppercase tracking-wider">Recursos</span>
+                    <a href="#" class="text-xl font-normal text-[#4B5563] hover:text-[#8B5CF6] transition-colors">Documentación</a>
+                    <a href="#" class="text-xl font-normal text-[#4B5563] hover:text-[#8B5CF6] transition-colors">Themes</a>
+                    <a href="#" class="text-xl font-normal text-[#4B5563] hover:text-[#8B5CF6] transition-colors">Desarrolladores</a>
+                </div>
+                <div class="col-span-2 lg:col-span-2 flex flex-col gap-5">
+                    <span class="font-mono-label text-[#8B5CF6] mb-2 uppercase tracking-wider">Newsletter</span>
+                    <div class="flex items-center gap-2 bg-white border border-[#E5E7EB] rounded-full p-2 focus-within:border-[#8B5CF6] transition-colors shadow-sm">
+                        <input type="email" placeholder="tu@email.com" class="bg-transparent border-none outline-none text-xl text-[#111827] px-6 w-full placeholder:text-[#4B5563]">
+                        <button class="bg-[#56ffd4] text-[#111827] hover:bg-[#2eedd9] rounded-full px-8 py-4 text-lg font-normal transition-colors shadow-md">Suscribirse</button>
+                    </div>
+                    <div class="flex items-center gap-4 pt-2">
+                        <span class="font-mono-label text-[#8B5CF6] uppercase tracking-wider">Síguenos</span>
+                        <div class="flex gap-3">
+                            <a href="#" class="border border-[#E5E7EB] bg-white hover:bg-[#8B5CF6] hover:border-[#8B5CF6] hover:text-white rounded-full px-5 py-2 text-base font-normal transition-all shadow-sm">Instagram</a>
+                            <a href="#" class="border border-[#E5E7EB] bg-white hover:bg-[#8B5CF6] hover:border-[#8B5CF6] hover:text-white rounded-full px-5 py-2 text-base font-normal transition-all shadow-sm">X</a>
+                            <a href="#" class="border border-[#E5E7EB] bg-white hover:bg-[#8B5CF6] hover:border-[#8B5CF6] hover:text-white rounded-full px-5 py-2 text-base font-normal transition-all shadow-sm">LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-[#E5E7EB] text-lg text-[#4B5563] font-normal gap-4">
+                <p>© 2025 STRONGLIFY INC.</p>
+                <div class="flex gap-8">
+                    <a href="#" class="hover:text-[#111827] transition-colors">Política de Privacidad</a>
+                    <a href="#" class="hover:text-[#111827] transition-colors">Términos</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body></html>

@@ -10,7 +10,11 @@
       "Bash(python3 -m http.server 8080)",
       "Bash(ngrok http *)",
       "Bash(curl -s http://localhost:4040/api/tunnels)",
-      "Bash(python3 -c \"import sys,json; t=json.load\\(sys.stdin\\)['tunnels']; print\\(t[0]['public_url']\\)\")"
+      "Bash(python3 -c \"import sys,json; t=json.load\\(sys.stdin\\)['tunnels']; print\\(t[0]['public_url']\\)\")",
+      "Bash(npm --version)",
+      "Bash(npm install *)",
+      "Bash(npx @tailwindcss/cli -i ./src/input.css -o ./dist/styles.css --minify)",
+      "Bash(npx @tailwindcss/cli -i ./src/input.css -o ./styles.css --minify)"
     ]
   }
 }
