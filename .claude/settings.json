@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat)",
+      "Bash(cat /Users/jorgejaramillo/Documents/Github/stronglify-website-2026/animation.html)",
+      "Bash(echo \"</body></html>\")",
+      "Bash(open /tmp/preview_animation.html)",
+      "Bash(pkill -f \"http.server\")",
+      "Bash(pkill ngrok *)",
+      "Bash(python3 -m http.server 8080)",
+      "Bash(ngrok http *)",
+      "Bash(curl -s http://localhost:4040/api/tunnels)",
+      "Bash(python3 -c \"import sys,json; t=json.load\\(sys.stdin\\)['tunnels']; print\\(t[0]['public_url']\\)\")"
+    ]
+  }
+}

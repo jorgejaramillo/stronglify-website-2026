@@ -1,0 +1,235 @@
+<div class="cms-stage">
+
+  <!-- Ruido de fondo -->
+  <canvas class="cms-noise" id="cmsNoise"></canvas>
+
+  <!-- Árbol -->
+  <div class="cms-tree">
+
+    <div class="cms-node root">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
+        <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/>
+      </svg>
+      <span>/root</span>
+    </div>
+
+    <div class="cms-root-gap"></div>
+
+    <div class="cms-children-wrap">
+    <div class="cms-branch vertical"></div>
+    <div class="cms-children">
+
+      <div class="cms-child" style="--d:.4s">
+        <div class="cms-branch horizontal"></div>
+        <div class="cms-node child">
+          <span class="dot"></span>
+          <span>Landing Page</span>
+        </div>
+      </div>
+
+      <div class="cms-child" style="--d:.8s">
+        <div class="cms-branch horizontal"></div>
+        <div class="cms-node child">
+          <span class="dot"></span>
+          <span>Blog CMS</span>
+        </div>
+      </div>
+
+      <div class="cms-child" style="--d:1.2s">
+        <div class="cms-branch horizontal"></div>
+        <div class="cms-node child">
+          <span class="dot"></span>
+          <span>E-commerce</span>
+        </div>
+      </div>
+
+      <div class="cms-child output" style="--d:1.8s">
+        <div class="cms-branch horizontal"></div>
+        <div class="cms-node output">
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M13 6l6 6-6 6"/>
+          </svg>
+          <span>Output</span>
+        </div>
+      </div>
+
+    </div>
+    </div><!-- end children-wrap -->
+  </div>
+</div>
+
+<style>
+.cms-stage {
+  position: relative;
+  width: 340px;
+  height: 340px;
+  background: #1C1C1E;
+  border-radius: 16px;
+  overflow: hidden;
+  font-family: "JetBrains Mono", monospace, system-ui;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Noise */
+.cms-noise {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .018;
+  pointer-events: none;
+  filter: brightness(2);
+}
+
+/* Árbol */
+.cms-tree {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.cms-children-wrap {
+  position: relative;
+}
+
+.cms-branch.vertical {
+  position: absolute;
+  left: 18px;
+  top: 0;
+  bottom: 21px;
+  width: 2px;
+  border-radius: 0 0 2px 2px;
+  background: rgba(139,92,246,.6);
+  animation: line-in .5s ease-out .2s both;
+  transform-origin: top center;
+}
+
+.cms-children {
+  display: flex;
+  flex-direction: column;
+}
+
+.cms-child {
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  animation: fade-in .4s ease-out var(--d) forwards;
+}
+
+.cms-branch.horizontal {
+  width: 24px;
+  height: 2px;
+  background: rgba(139,92,246,.6);
+  margin-left: 20px;
+  flex-shrink: 0;
+}
+
+.cms-node {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .02em;
+}
+
+.cms-node.root {
+  background: rgba(139,92,246,.2);
+  border: 1px solid rgba(139,92,246,.5);
+  color: #c4b5fd;
+  animation: root-in .4s ease-out both;
+}
+
+.cms-node.child {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  color: #cbd5e1;
+  margin: 5px 0;
+}
+
+.cms-node.output {
+  background: rgba(86,255,212,.12);
+  border: 1px solid rgba(86,255,212,.4);
+  color: #56ffd4;
+  margin: 5px 0;
+}
+
+.cms-root-gap {
+  height: 16px;
+  margin-left: 18px;
+  width: 2px;
+  background: rgba(139,92,246,.6);
+  animation: line-in .5s ease-out .15s both;
+  transform-origin: top center;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #56ffd4;
+  flex-shrink: 0;
+  animation: dot-blink 1.8s ease-in-out infinite;
+}
+
+@keyframes root-in {
+  from { opacity: 0; transform: scale(.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes line-in {
+  from { transform: scaleY(0); }
+  to   { transform: scaleY(1); }
+}
+@keyframes fade-in {
+  from { opacity: 0; transform: translateX(-6px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes dot-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: .2; }
+}
+</style>
+
+<script>
+(function () {
+  const canvas = document.getElementById('cmsNoise');
+  const ctx = canvas.getContext('2d');
+  canvas.width  = 340;
+  canvas.height = 340;
+
+  function drawNoise() {
+    const img = ctx.createImageData(canvas.width, canvas.height);
+    for (let i = 0; i < img.data.length; i += 4) {
+      const v = Math.random() * 255 | 0;
+      img.data[i]     = v;
+      img.data[i + 1] = v;
+      img.data[i + 2] = v;
+      img.data[i + 3] = 255;
+    }
+    ctx.putImageData(img, 0, 0);
+  }
+
+  drawNoise();
+  setInterval(drawNoise, 120);
+
+  // Loop animación cada 20s
+  function restartAnimations() {
+    const tree = document.querySelector('.cms-tree');
+    tree.style.animation = 'none';
+    const animated = tree.querySelectorAll('[style*="--d"], .cms-node.root, .cms-branch.vertical, .cms-root-gap');
+    animated.forEach(el => {
+      el.style.animation = 'none';
+      el.offsetHeight; // reflow
+      el.style.animation = '';
+    });
+  }
+
+  setInterval(restartAnimations, 20000);
+})();
+</script>
