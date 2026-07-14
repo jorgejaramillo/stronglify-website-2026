@@ -4,9 +4,9 @@
 <link rel="stylesheet" href="styles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet">
 <style>
-body { font-family: 'Geist', sans-serif; }
+body { font-family: 'Wix Madefor Text', sans-serif; }
 .font-mono-label {
   font-family: 'JetBrains Mono', monospace;
   font-size: 12px;
@@ -104,44 +104,28 @@ body { font-family: 'Geist', sans-serif; }
     <!-- ─────────────────────────────────────────── -->
     <!-- MAIN                                        -->
     <!-- ─────────────────────────────────────────── -->
-    <main class="pt-20">
+    <main>
 
         <!-- Article Header -->
-        <section class="bg-white py-16 md:py-24 border-b border-[#E5E7EB]">
-            <div class="max-w-screen-md mx-auto px-6 md:px-12">
-                <!-- Breadcrumb -->
-                <div class="flex items-center gap-2 mb-8">
-                    <a href="blog.html" class="font-mono-label text-[#8B5CF6] uppercase tracking-wider hover:underline">Blog</a>
-                    <span class="text-[#E5E7EB]">/</span>
-                    <span class="font-mono-label text-[#4B5563] uppercase tracking-wider">SEO Programático</span>
-                </div>
-                <h1 class="text-4xl md:text-5xl font-medium tracking-tight text-[#111827] leading-tight">Cómo escalar de 0 a 10,000 páginas indexadas en 90 días.</h1>
-                <p class="mt-6 text-xl text-[#4B5563] font-normal leading-relaxed">Un caso de estudio real con una agencia SEO en Colombia que multiplicó su tráfico orgánico usando Stronglify.</p>
-                <!-- Author + Meta -->
-                <div class="mt-8 flex items-center gap-4 pt-8 border-t border-[#E5E7EB]">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=80&auto=format&fit=crop" class="w-12 h-12 rounded-full object-cover" alt="Author">
-                    <div class="flex-1">
-                        <p class="text-base font-medium text-[#111827]">Jorge Jaramillo</p>
-                        <p class="text-sm text-[#4B5563]">15 de junio, 2026</p>
-                    </div>
-                    <div class="hidden sm:flex items-center gap-2">
-                        <span class="font-mono-label text-[#4B5563] uppercase tracking-wider">8 min lectura</span>
-                    </div>
-                </div>
+        <section class="relative flex flex-col justify-end overflow-hidden" style="min-height: 60vh;">
+            <img src="https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?q=80&w=1400&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover" alt="Article hero">
+            <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 45%, rgba(0,0,0,0) 100%);"></div>
+            <div class="absolute inset-0 w-full h-full pointer-events-none" style="filter: blur(60px);">
+                <div class="absolute rounded-full" style="width:60%;height:60%;top:10%;left:-10%;background:radial-gradient(circle at center,rgba(86,255,212,0.25) 0,rgba(86,255,212,0) 70%);animation:moveHorizontal 40s ease infinite;"></div>
+                <div class="absolute rounded-full" style="width:50%;height:50%;top:30%;right:-5%;background:radial-gradient(circle at center,rgba(6,182,212,0.2) 0,rgba(6,182,212,0) 70%);animation:moveInCircle 30s reverse infinite;"></div>
+                <div class="absolute rounded-full" style="width:40%;height:40%;bottom:0;left:30%;background:radial-gradient(circle at center,rgba(86,255,212,0.18) 0,rgba(86,255,212,0) 70%);animation:moveVertical 35s ease infinite;"></div>
+            </div>
+            <div class="relative max-w-screen-md mx-auto px-6 md:px-12 pt-16 pb-16 md:pb-20 w-full">
+                <h1 class="text-3xl md:text-4xl font-bold tracking-tight text-white leading-tight">Cómo escalar de 0 a 10,000 páginas indexadas en 90 días.</h1>
+                <p class="mt-3 text-lg text-white font-normal leading-relaxed" style="opacity:0.9;">Un caso de estudio real con una agencia SEO en Colombia que multiplicó su tráfico orgánico usando Stronglify.</p>
             </div>
         </section>
 
-        <!-- Hero Image -->
-        <div class="max-w-screen-xl mx-auto px-6 md:px-12 py-8">
-            <div class="aspect-video rounded-[8px] overflow-hidden border border-[#E5E7EB]">
-                <img src="https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?q=80&w=1400&auto=format&fit=crop" class="w-full h-full object-cover" alt="Article hero">
-            </div>
-        </div>
-
         <!-- Article Body -->
         <div class="max-w-screen-md mx-auto px-6 md:px-12 pb-24">
+            <hr class="border-transparent border mb-10">
             <div class="prose">
-                <p>Cuando una agencia SEO en Bogotá nos contactó, tenían el problema clásico: docenas de clientes, meses de trabajo manual para crear páginas, y resultados que tardaban demasiado en llegar. Su modelo no escalaba.</p>
+                <p>Cuando uXXna agencia SEO en Bogotá nos contactó, tenían el problema clásico: docenas de clientes, meses de trabajo manual para crear páginas, y resultados que tardaban demasiado en llegar. Su modelo no escalaba.</p>
 
                 <p>En 90 días, con Stronglify, pasaron de publicar 20 páginas por mes a más de 10,000 URLs indexadas. Este es el proceso exacto que usamos.</p>
 
@@ -197,6 +181,25 @@ body { font-family: 'Geist', sans-serif; }
                 <h2>¿Quieres replicar esto?</h2>
 
                 <p>Si tienes un negocio con múltiples ubicaciones, servicios o productos, el SEO programático con Stronglify puede ser el sistema que necesitas. Empieza gratis y publica tus primeras 100 páginas hoy.</p>
+            </div>
+
+            <!-- Post meta footer -->
+            <div class="mt-12 pt-8 border-t border-[#E5E7EB]">
+                <div class="flex items-center gap-2 mb-6">
+                    <a href="blog.html" class="font-mono-label text-[#8B5CF6] uppercase tracking-wider hover:underline">Blog</a>
+                    <span class="text-[#E5E7EB]">/</span>
+                    <span class="font-mono-label text-[#4B5563] uppercase tracking-wider">SEO Programático</span>
+                </div>
+                <div class="flex items-center gap-4">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=80&auto=format&fit=crop" class="w-12 h-12 rounded-full object-cover" alt="Author">
+                    <div class="flex-1">
+                        <p class="text-base font-medium text-[#111827]">Jorge Jaramillo</p>
+                        <p class="text-sm text-[#4B5563]">15 de junio, 2026</p>
+                    </div>
+                    <div class="hidden sm:flex items-center gap-2">
+                        <span class="font-mono-label text-[#4B5563] uppercase tracking-wider">8 min lectura</span>
+                    </div>
+                </div>
             </div>
 
             <!-- CTA inline -->
