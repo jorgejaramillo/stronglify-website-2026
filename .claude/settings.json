@@ -20,7 +20,21 @@
       "Bash(ngrok version *)",
       "Bash(python3 -m http.server 8000)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:8000/index.html)",
-      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(d['tunnels'][0]['public_url']\\)\")"
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(d['tunnels'][0]['public_url']\\)\")",
+      "Bash(awk -F: '$1<846')",
+      "Bash(npx tailwindcss *)",
+      "Bash(echo \"rc=$?\")",
+      "Bash(npm run *)",
+      "Bash(python3 -)",
+      "Bash(node -e \"const {transform}=require\\('/Users/jorgejaramillo/Documents/Github/stronglify-website-2026/node_modules/lightningcss'\\); console.log\\(typeof transform\\)\")",
+      "Bash(node -e ' *)",
+      "Bash(curl -sSL \"https://stronglify.com/assets/css/vendors/swiper-bundle.min.css\" -o /Users/jorgejaramillo/Documents/Github/stronglify-website-2026/assets/css/vendors/swiper-bundle.min.css -w \"HTTP %{http_code}, size %{size_download} bytes\\\\n\")",
+      "Bash(curl -sSL -m 5 \"https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css\" -o /tmp/test.css -w \"HTTP %{http_code}\\\\n\")",
+      "Bash(mkdir -p /Users/jorgejaramillo/Documents/Github/stronglify-website-2026/assets/css/vendors *)",
+      "Bash(curl -sSL -m 10 \"https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js\" -o /Users/jorgejaramillo/Documents/Github/stronglify-website-2026/assets/js/vendors/swiper-bundle.min.js -w \"HTTP %{http_code}, size %{size_download} bytes\\\\n\")"
+    ],
+    "additionalDirectories": [
+      "/private/tmp"
     ]
   }
 }

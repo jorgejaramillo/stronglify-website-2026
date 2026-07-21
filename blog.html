@@ -14,6 +14,14 @@ body { font-family: 'Wix Madefor Text', sans-serif; }
   line-height: 1.2;
   letter-spacing: 0.05em;
 }
+.hero-gradients { position: absolute; width: 100%; height: 100%; filter: url(#blurMe) blur(40px); }
+.blob { position: absolute; width: 80%; height: 80%; top: 10%; left: 10%; mix-blend-mode: hard-light; border-radius: 50%; }
+.blob-1 { transform-origin: center; opacity: 1; background: radial-gradient(circle, #8b5cf6 0, #8b5cf600 50%) no-repeat; animation: 30s infinite moveVertical; }
+.blob-2 { transform-origin: calc(50% - 400px); opacity: 1; background: radial-gradient(circle, #a78bfaf2 0, #a78bfa00 50%) no-repeat; animation: 20s infinite reverse moveInCircle; }
+.blob-3 { transform-origin: calc(50% + 400px); opacity: 1; background: radial-gradient(circle, #06b6d4e6 0, #06b6d400 50%) no-repeat; animation: 40s linear infinite moveInCircle; }
+@keyframes moveVertical { 0%{transform:translateY(-50%)} 50%{transform:translateY(50%)} to{transform:translateY(-50%)} }
+@keyframes moveInCircle { 0%{transform:rotate(0)} 50%{transform:rotate(180deg)} to{transform:rotate(360deg)} }
+@keyframes moveHorizontal { 0%{transform:translate(-50%) translateY(-10%)} 50%{transform:translate(50%) translateY(10%)} to{transform:translate(-50%) translateY(-10%)} }
 </style>
 </head>
 <body class="bg-white text-[#111827] antialiased selection:bg-[#8B5CF6] selection:text-white">
@@ -97,120 +105,96 @@ body { font-family: 'Wix Madefor Text', sans-serif; }
     <main class="pt-20">
 
         <!-- Blog Header -->
-        <section class="bg-white py-16 md:py-24 border-b border-[#E5E7EB]">
-            <div class="max-w-screen-xl mx-auto px-6 md:px-12">
-                <span class="font-mono-label text-[#8B5CF6] uppercase tracking-wider">Blog</span>
-                <h1 class="mt-4 text-5xl md:text-6xl font-medium tracking-tight text-[#111827] leading-tight">Recursos sobre SEO programático.</h1>
-                <p class="mt-6 text-xl text-[#4B5563] font-normal leading-relaxed max-w-2xl">Guías, casos de uso, y estrategias para hacer crecer tu presencia orgánica con Stronglify.</p>
+        <header class="relative w-full overflow-hidden bg-[#1C1C1E] pt-16 pb-24 px-6 md:px-12">
+            <svg class="hidden"><defs><filter id="blurMe"><feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"/><feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo"/><feBlend in="SourceGraphic" in2="goo"/></filter></defs></svg>
+            <div class="hero-gradients" style="inset:auto;left:auto;right:0;top:50%;transform:translateY(-50%);width:55%;height:90%;">
+                <div class="blob blob-1"></div>
+                <div class="blob blob-2"></div>
+                <div class="blob blob-3"></div>
             </div>
-        </section>
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,var(--tw-gradient-stops))] from-[#4C1D95] via-[#1C1C1E] to-[#1C1C1E] opacity-60"></div>
+
+            <div class="relative z-10 max-w-screen-xl mx-auto">
+                <span class="font-mono-label text-[#C4B5FD] uppercase tracking-wider">Blog</span>
+                <h1 class="mt-4 text-5xl md:text-6xl font-medium tracking-tight text-white leading-tight">Recursos sobre SEO programático.</h1>
+                <p class="mt-6 text-xl text-white/70 font-normal leading-relaxed max-w-2xl">Guías, casos de uso, y estrategias para hacer crecer tu presencia orgánica con Stronglify.</p>
+            </div>
+        </header>
 
         <!-- Featured Post -->
         <section class="bg-white py-16">
             <div class="max-w-screen-xl mx-auto px-6 md:px-12">
-                <a href="article.html" class="group grid grid-cols-1 lg:grid-cols-2 gap-8 rounded-[8px] border border-[#E5E7EB] overflow-hidden hover:border-[#8B5CF6] transition-colors shadow-sm hover:shadow-md">
+                <a href="article.html" class="grid grid-cols-1 lg:grid-cols-2 gap-8 rounded-[8px] overflow-hidden bg-[#F8F7FF]">
                     <div class="aspect-video lg:aspect-auto overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?q=80&w=900&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Featured post">
+                        <img src="https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?q=80&w=900&auto=format&fit=crop" class="w-full h-full object-cover" alt="Featured post">
                     </div>
                     <div class="p-8 lg:p-12 flex flex-col justify-center">
-                        <div class="flex items-center gap-3 mb-6">
-                            <span class="font-mono-label text-[#8B5CF6] uppercase tracking-wider bg-[#F5F3FF] px-3 py-1 rounded-full">Destacado</span>
-                            <span class="font-mono-label text-[#4B5563] uppercase tracking-wider">SEO Programático</span>
-                        </div>
                         <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-[#111827] leading-snug">Cómo escalar de 0 a 10,000 páginas indexadas en 90 días.</h2>
                         <p class="mt-4 text-lg text-[#4B5563] font-normal leading-relaxed">Un caso de estudio real con una agencia SEO en Colombia que multiplicó su tráfico orgánico usando Stronglify.</p>
-                        <div class="mt-8 flex items-center gap-4">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=80&auto=format&fit=crop" class="w-10 h-10 rounded-full object-cover" alt="Author">
-                            <div>
-                                <p class="text-base font-medium text-[#111827]">Jorge Jaramillo</p>
-                                <p class="text-sm text-[#4B5563]">15 de junio, 2026 · 8 min lectura</p>
-                            </div>
-                        </div>
                     </div>
                 </a>
             </div>
         </section>
 
         <!-- Post Grid -->
-        <section class="bg-[#F8F7FF] py-16 border-t border-[#E5E7EB]">
+        <section class="bg-white py-16">
             <div class="max-w-screen-xl mx-auto px-6 md:px-12">
-                <div class="flex items-center justify-between mb-10">
-                    <span class="font-mono-label text-[#8B5CF6] uppercase tracking-wider">Todos los artículos</span>
-                    <!-- Category filters -->
-                    <div class="hidden sm:flex gap-2">
-                        <button class="font-mono-label uppercase tracking-wider bg-[#8B5CF6] text-white px-4 py-2 rounded-full text-xs">Todos</button>
-                        <button class="font-mono-label uppercase tracking-wider bg-white border border-[#E5E7EB] text-[#4B5563] hover:border-[#8B5CF6] hover:text-[#8B5CF6] px-4 py-2 rounded-full text-xs transition-colors">SEO</button>
-                        <button class="font-mono-label uppercase tracking-wider bg-white border border-[#E5E7EB] text-[#4B5563] hover:border-[#8B5CF6] hover:text-[#8B5CF6] px-4 py-2 rounded-full text-xs transition-colors">Producto</button>
-                        <button class="font-mono-label uppercase tracking-wider bg-white border border-[#E5E7EB] text-[#4B5563] hover:border-[#8B5CF6] hover:text-[#8B5CF6] px-4 py-2 rounded-full text-xs transition-colors">Casos de uso</button>
-                    </div>
-                </div>
+
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Post card -->
-                    <a href="article.html" class="group bg-white rounded-[8px] border border-[#E5E7EB] overflow-hidden hover:border-[#8B5CF6] hover:shadow-md transition-all shadow-sm flex flex-col">
+                    <a href="article.html" class="bg-[#F8F7FF] rounded-[8px] overflow-hidden flex flex-col">
                         <div class="aspect-video overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Post">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover" alt="Post">
                         </div>
                         <div class="p-6 flex flex-col flex-1">
-                            <span class="font-mono-label text-[#8B5CF6] uppercase tracking-wider">SEO Local</span>
                             <h3 class="mt-3 text-xl font-medium text-[#111827] leading-snug">SEO local para negocios con múltiples sucursales: la guía definitiva.</h3>
                             <p class="mt-2 text-sm text-[#4B5563] leading-relaxed flex-1">Aprende a dominar los resultados locales en cada ciudad donde operas sin duplicar contenido.</p>
-                            <p class="mt-4 text-sm text-[#4B5563]">10 jun 2026 · 6 min</p>
                         </div>
                     </a>
-                    <a href="article.html" class="group bg-white rounded-[8px] border border-[#E5E7EB] overflow-hidden hover:border-[#8B5CF6] hover:shadow-md transition-all shadow-sm flex flex-col">
+                    <a href="article.html" class="bg-[#F8F7FF] rounded-[8px] overflow-hidden flex flex-col">
                         <div class="aspect-video overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Post">
+                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover" alt="Post">
                         </div>
                         <div class="p-6 flex flex-col flex-1">
-                            <span class="font-mono-label text-[#8B5CF6] uppercase tracking-wider">E-commerce</span>
                             <h3 class="mt-3 text-xl font-medium text-[#111827] leading-snug">Páginas de categoría que ranquean: estructura y contenido.</h3>
                             <p class="mt-2 text-sm text-[#4B5563] leading-relaxed flex-1">Cómo construir páginas de categoría que Google ama y que convierten a compradores.</p>
-                            <p class="mt-4 text-sm text-[#4B5563]">5 jun 2026 · 5 min</p>
                         </div>
                     </a>
-                    <a href="article.html" class="group bg-white rounded-[8px] border border-[#E5E7EB] overflow-hidden hover:border-[#8B5CF6] hover:shadow-md transition-all shadow-sm flex flex-col">
+                    <a href="article.html" class="bg-[#F8F7FF] rounded-[8px] overflow-hidden flex flex-col">
                         <div class="aspect-video overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Post">
+                            <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover" alt="Post">
                         </div>
                         <div class="p-6 flex flex-col flex-1">
-                            <span class="font-mono-label text-[#8B5CF6] uppercase tracking-wider">Producto</span>
                             <h3 class="mt-3 text-xl font-medium text-[#111827] leading-snug">Automatización de contenido SEO con IA: lo que funciona en 2026.</h3>
                             <p class="mt-2 text-sm text-[#4B5563] leading-relaxed flex-1">Qué tareas de contenido puedes delegar a la IA hoy y cuáles todavía necesitan criterio humano.</p>
-                            <p class="mt-4 text-sm text-[#4B5563]">1 jun 2026 · 7 min</p>
                         </div>
                     </a>
-                    <a href="article.html" class="group bg-white rounded-[8px] border border-[#E5E7EB] overflow-hidden hover:border-[#8B5CF6] hover:shadow-md transition-all shadow-sm flex flex-col">
+                    <a href="article.html" class="bg-[#F8F7FF] rounded-[8px] overflow-hidden flex flex-col">
                         <div class="aspect-video overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Post">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover" alt="Post">
                         </div>
                         <div class="p-6 flex flex-col flex-1">
-                            <span class="font-mono-label text-[#8B5CF6] uppercase tracking-wider">SEO</span>
                             <h3 class="mt-3 text-xl font-medium text-[#111827] leading-snug">Internal linking a escala: cómo distribuir autoridad entre miles de páginas.</h3>
                             <p class="mt-2 text-sm text-[#4B5563] leading-relaxed flex-1">La estrategia de enlaces internos que usamos para sitios con más de 50,000 URLs.</p>
-                            <p class="mt-4 text-sm text-[#4B5563]">28 may 2026 · 9 min</p>
                         </div>
                     </a>
-                    <a href="article.html" class="group bg-white rounded-[8px] border border-[#E5E7EB] overflow-hidden hover:border-[#8B5CF6] hover:shadow-md transition-all shadow-sm flex flex-col">
+                    <a href="article.html" class="bg-[#F8F7FF] rounded-[8px] overflow-hidden flex flex-col">
                         <div class="aspect-video overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Post">
+                            <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover" alt="Post">
                         </div>
                         <div class="p-6 flex flex-col flex-1">
-                            <span class="font-mono-label text-[#8B5CF6] uppercase tracking-wider">Casos de uso</span>
                             <h3 class="mt-3 text-xl font-medium text-[#111827] leading-snug">Caso de estudio: agencia triplicó clientes en 6 meses con SEO programático.</h3>
                             <p class="mt-2 text-sm text-[#4B5563] leading-relaxed flex-1">Cómo una agencia mediana en México usó Stronglify para escalar sin contratar más redactores.</p>
-                            <p class="mt-4 text-sm text-[#4B5563]">20 may 2026 · 10 min</p>
                         </div>
                     </a>
-                    <a href="article.html" class="group bg-white rounded-[8px] border border-[#E5E7EB] overflow-hidden hover:border-[#8B5CF6] hover:shadow-md transition-all shadow-sm flex flex-col">
+                    <a href="article.html" class="bg-[#F8F7FF] rounded-[8px] overflow-hidden flex flex-col">
                         <div class="aspect-video overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Post">
+                            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover" alt="Post">
                         </div>
                         <div class="p-6 flex flex-col flex-1">
-                            <span class="font-mono-label text-[#8B5CF6] uppercase tracking-wider">Producto</span>
                             <h3 class="mt-3 text-xl font-medium text-[#111827] leading-snug">Stronglify 2.0: nuevas plantillas, editor visual y más velocidad.</h3>
                             <p class="mt-2 text-sm text-[#4B5563] leading-relaxed flex-1">Todo lo nuevo en la versión 2.0 de la plataforma: qué cambia y cómo migrar en minutos.</p>
-                            <p class="mt-4 text-sm text-[#4B5563]">12 may 2026 · 4 min</p>
                         </div>
                     </a>
                 </div>
@@ -218,9 +202,9 @@ body { font-family: 'Wix Madefor Text', sans-serif; }
                 <!-- Pagination -->
                 <div class="flex justify-center gap-2 mt-16">
                     <button class="w-10 h-10 rounded-[8px] bg-[#8B5CF6] text-white font-medium flex items-center justify-center">1</button>
-                    <button class="w-10 h-10 rounded-[8px] border border-[#E5E7EB] bg-white text-[#4B5563] hover:border-[#8B5CF6] hover:text-[#8B5CF6] font-medium flex items-center justify-center transition-colors">2</button>
-                    <button class="w-10 h-10 rounded-[8px] border border-[#E5E7EB] bg-white text-[#4B5563] hover:border-[#8B5CF6] hover:text-[#8B5CF6] font-medium flex items-center justify-center transition-colors">3</button>
-                    <button class="w-10 h-10 rounded-[8px] border border-[#E5E7EB] bg-white text-[#4B5563] hover:border-[#8B5CF6] hover:text-[#8B5CF6] font-medium flex items-center justify-center transition-colors">
+                    <button class="w-10 h-10 rounded-[8px] bg-[#F5F3FF] text-[#4B5563] hover:text-[#8B5CF6] font-medium flex items-center justify-center transition-colors">2</button>
+                    <button class="w-10 h-10 rounded-[8px] bg-[#F5F3FF] text-[#4B5563] hover:text-[#8B5CF6] font-medium flex items-center justify-center transition-colors">3</button>
+                    <button class="w-10 h-10 rounded-[8px] bg-[#F5F3FF] text-[#4B5563] hover:text-[#8B5CF6] font-medium flex items-center justify-center transition-colors">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
                     </button>
                 </div>
