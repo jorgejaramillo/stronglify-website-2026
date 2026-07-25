@@ -1,66 +1,11 @@
-            <!-- Card 2: La IA lo genera -->
-            <div class="agentic-card rounded-[8px] aspect-square lg:aspect-auto overflow-hidden relative flex flex-col p-6" style="background:#0B0F19;">
-
-                <h3 class="text-sm font-semibold text-white/50 uppercase tracking-wider mb-3">Caso de ejemplo programático</h3>
-
-                <!-- Input -->
-                <div class="agentic-input rounded-[8px] px-4 py-3 mb-3">
-                    <p class="text-sm text-white leading-snug">Crea 250 landings de servicio por ciudad para cliente de mantenimiento de piscinas</p>
-                    <span class="agentic-chip inline-block mt-2 text-xs font-mono rounded-full py-1">keywords.csv · 250 filas</span>
-                </div>
-
-                <!-- Proceso -->
-                <div class="flex flex-col gap-2 mb-3">
-                    <div class="flex items-center gap-2 text-sm text-white/70">
-                        <svg class="shrink-0 w-4 h-4 text-[#56ffd4]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg>
-                        <span>Priorizando las keywords</span>
-                    </div>
-                    <div class="flex items-center gap-2 text-sm text-white/70">
-                        <svg class="shrink-0 w-4 h-4 text-[#56ffd4]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg>
-                        <span>Asociando keywords a landing</span>
-                    </div>
-                    <div class="flex items-center gap-2 text-sm text-white/70">
-                        <svg class="shrink-0 w-4 h-4 text-[#56ffd4]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg>
-                        <span>Creando landings masivamente</span>
-                    </div>
-                    <div class="flex items-center gap-2 text-sm text-white/70">
-                        <svg class="shrink-0 w-4 h-4 text-[#56ffd4]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg>
-                        <span>Redactando title, description, H1 y contenido</span>
-                    </div>
-                    <div class="flex items-center gap-2 text-sm text-white/70">
-                        <svg class="shrink-0 w-4 h-4 text-[#56ffd4]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg>
-                        <span>Construyendo enlazado interno</span>
-                    </div>
-                    <div class="flex items-center gap-2 text-sm text-white/70">
-                        <svg class="shrink-0 w-4 h-4 text-[#56ffd4]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg>
-                        <span>Optimizando y enriqueciendo contenido</span>
-                    </div>
-                    <div class="flex items-center gap-2 text-sm text-white/70">
-                        <svg class="shrink-0 w-4 h-4 text-[#56ffd4]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg>
-                        <span>Validación de seguridad</span>
-                    </div>
-                    <div class="flex items-center gap-2 text-sm text-white">
-                        <svg class="agentic-spinner shrink-0 w-4 h-4 text-[#8B5CF6]" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" opacity="0.25"/><path d="M21 12a9 9 0 0 0-9-9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                        <span>Validando</span>
-                    </div>
-                    <div class="flex items-center gap-2 text-sm text-white/40">
-                        <svg class="shrink-0 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></svg>
-                        <span>Listo para enviar a indexar</span>
-                    </div>
-                    <div class="agentic-track h-1 rounded-full bg-white/10 overflow-hidden">
-                        <div class="agentic-progress h-full rounded-full" style="background:#8B5CF6;"></div>
-                    </div>
-                </div>
-            </div>
-
-            <style>
-            .agentic-input{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1)}
-            .agentic-chip{color:#56ffd4;background:rgba(86,255,212,.1);border:1px solid rgba(86,255,212,.2);padding-left:.625rem;padding-right:.625rem}
-            .agentic-track{margin-left:1.5rem}
-            .agentic-thumb{aspect-ratio:3/4;border-radius:4px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1)}
-            .agentic-thumb--fade{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.05);opacity:.5}
-            .agentic-spinner{animation:agentic-spin 1s linear infinite}
-            @keyframes agentic-spin{to{transform:rotate(360deg)}}
-            .agentic-progress{width:35%;animation:agentic-fill 2.4s ease-in-out infinite}
-            @keyframes agentic-fill{0%{width:15%}50%{width:70%}100%{width:15%}}
-            </style>
+<meta property="og:title" content="Stronglify — SEO programático con IA a escala"/>
+<meta property="og:description" content="Genera cientos de landings optimizadas para SEO en minutos con IA: keywords, contenido, enlazado interno y validación, listo para indexar."/>
+<meta property="og:image" content="https://media.stronglify.com/12/share-1785020809.png"/>
+<meta property="og:url" content="https://stronglify.com/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Stronglify"/>
+<meta property="og:locale" content="es_ES"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Stronglify — SEO programático con IA a escala"/>
+<meta name="twitter:description" content="Genera cientos de landings optimizadas para SEO en minutos con IA: keywords, contenido, enlazado interno y validación, listo para indexar."/>
+<meta name="twitter:image" content="https://media.stronglify.com/12/share-1785020809.png"/>
