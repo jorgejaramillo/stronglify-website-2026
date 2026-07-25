@@ -1,0 +1,371 @@
+<html lang="es" class="scroll-smooth"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stronglify para Agencias | Multiplica tu capacidad comercial</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet">
+<style>
+body { font-family: 'Wix Madefor Text', sans-serif; }
+.font-mono-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+}
+</style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="fixed top-0 left-0 w-full z-50 px-6 py-2 md:px-10 flex justify-between items-center text-[#111827] bg-white border-b border-[#E5E7EB] shadow-sm">
+        <a href="index.html"><img src="https://stronglify-1.s3.sa-east-1.amazonaws.com/img/logo-new-brand-stronglify-alpha.svg" alt="Stronglify" class="h-12"></a>
+        <div class="hidden md:flex items-center gap-8">
+            <a href="index.html#casos" class="text-base font-normal tracking-tight hover:text-[#8B5CF6] transition-colors">Casos de uso</a>
+            <a href="index.html#usecases" class="text-base font-normal tracking-tight hover:text-[#8B5CF6] transition-colors">Precios</a>
+            <a href="blog.html" class="text-base font-normal tracking-tight hover:text-[#8B5CF6] transition-colors">Blog</a>
+        </div>
+        <div class="flex items-center gap-4">
+            <a href="https://stronglify.com" class="hidden md:block text-base font-normal tracking-tight bg-[#56ffd4] text-[#111827] px-6 py-2 rounded-full hover:bg-[#2eedd9] transition-colors shadow-md shadow-[#45cf92]/20">Crear cuenta</a>
+            <button id="menuToggle" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Menú">
+                <span class="block w-6 h-0.5 bg-[#111827] transition-all duration-300" id="ham1"></span>
+                <span class="block w-6 h-0.5 bg-[#111827] transition-all duration-300" id="ham2"></span>
+                <span class="block w-6 h-0.5 bg-[#111827] transition-all duration-300" id="ham3"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="fixed inset-0 z-40 bg-white flex flex-col px-6 py-6 translate-x-full transition-transform duration-300 ease-in-out">
+        <div class="flex justify-end items-center mb-10">
+            <button id="menuClose" class="p-2" aria-label="Cerrar">
+                <svg class="w-6 h-6 text-[#111827]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+        <div class="flex flex-col gap-1 flex-1">
+            <a href="index.html#casos" class="text-2xl font-normal px-4 py-4 rounded-[8px] hover:bg-[#F5F3FF] text-[#111827] transition-colors" onclick="closeMenu()">Casos de uso</a>
+            <a href="index.html#usecases" class="text-2xl font-normal px-4 py-4 rounded-[8px] hover:bg-[#F5F3FF] text-[#111827] transition-colors" onclick="closeMenu()">Precios</a>
+            <a href="blog.html" class="text-2xl font-normal px-4 py-4 rounded-[8px] hover:bg-[#F5F3FF] text-[#111827] transition-colors" onclick="closeMenu()">Blog</a>
+        </div>
+        <a href="https://stronglify.com" class="mt-6 bg-[#56ffd4] text-[#111827] text-xl font-normal text-center py-5 rounded-full hover:bg-[#2eedd9] transition-colors shadow-lg">Crear cuenta gratis</a>
+    </div>
+    <script>
+        const toggle = document.getElementById('menuToggle');
+        const menu   = document.getElementById('mobileMenu');
+        const ham1   = document.getElementById('ham1');
+        const ham2   = document.getElementById('ham2');
+        const ham3   = document.getElementById('ham3');
+        toggle.addEventListener('click', () => {
+            menu.classList.toggle('translate-x-full');
+            const open = !menu.classList.contains('translate-x-full');
+            ham1.style.transform = open ? 'translateY(8px) rotate(45deg)' : '';
+            ham2.style.opacity   = open ? '0' : '1';
+            ham3.style.transform = open ? 'translateY(-8px) rotate(-45deg)' : '';
+        });
+        document.getElementById('menuClose').addEventListener('click', closeMenu);
+        function closeMenu() {
+            menu.classList.add('translate-x-full');
+            ham1.style.transform = '';
+            ham2.style.opacity   = '1';
+            ham3.style.transform = '';
+        }
+    </script>
+
+    <!-- ─────────────────────────────────────────── -->
+    <!-- MAIN                                        -->
+    <!-- ─────────────────────────────────────────── -->
+    <main class="pt-20 bg-white text-[#111827] antialiased selection:bg-[#8B5CF6] selection:text-white">
+
+        <!-- Hero -->
+        <header class="relative w-full overflow-hidden bg-[#1C1C1E] pb-24 px-6 md:px-12">
+            <svg class="hidden"><defs><filter id="blurMe"><feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"/><feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo"/><feBlend in="SourceGraphic" in2="goo"/></filter></defs></svg>
+            <div class="hero-gradients" style="inset:auto;left:auto;right:0;top:50%;transform:translateY(-50%);width:55%;height:90%;">
+                <div class="blob blob-1"></div>
+                <div class="blob blob-2"></div>
+                <div class="blob blob-3"></div>
+            </div>
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#4C1D95] via-[#1C1C1E] to-[#1C1C1E] opacity-60"></div>
+
+            <div class="relative z-10 max-w-screen-2xl pt-36 mx-auto">
+                <span class="font-mono-label text-[#C4B5FD] uppercase tracking-wider">Para agencias</span>
+                <h1 class="mt-4 text-5xl md:text-7xl font-medium tracking-tight text-white leading-tight max-w-4xl">
+                    Multiplica la capacidad comercial de tu agencia sin aumentar la nómina.
+                </h1>
+                <p class="mt-6 text-lg md:text-xl text-white/70 max-w-2xl leading-relaxed">
+                    Transformamos la creación de sitios web optimizados para SEO e inteligencia artificial en un proceso rápido, simple y escalable — sin depender constantemente de desarrollo.
+                </p>
+                <div class="mt-10 flex flex-wrap gap-4">
+                    <a href="https://stronglify.com" class="bg-[#56ffd4] text-[#111827] px-8 py-4 rounded-full text-lg font-normal hover:bg-[#2eedd9] transition-colors shadow-xl shadow-[#56ffd4]/30">Hablar con ventas</a>
+                    <a href="#plan" class="bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-full text-lg font-normal hover:bg-white/20 transition-colors shadow-lg border border-white/20">Ver plan para agencias</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- El problema -->
+        <section class="bg-white py-16 md:py-24">
+            <div class="max-w-screen-2xl mx-auto px-6 md:px-12">
+                <span class="font-mono-label text-[#8B5CF6] uppercase tracking-wider">El problema</span>
+                <h2 class="mt-4 text-3xl md:text-4xl font-medium tracking-tight text-[#111827] leading-tight max-w-2xl">Así pierden tiempo y dinero las agencias hoy.</h2>
+
+                <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="rounded-[8px] border border-[#E5E7EB] p-8">
+                        <p class="text-base text-[#111827] leading-relaxed">Muchos equipos de marketing dependen de T.I. para ejecutar tareas simples.</p>
+                    </div>
+                    <div class="rounded-[8px] border border-[#E5E7EB] p-8">
+                        <p class="text-base text-[#111827] leading-relaxed">Los cambios técnicos en sitios web pueden tardar semanas o meses.</p>
+                    </div>
+                    <div class="rounded-[8px] border border-[#E5E7EB] p-8">
+                        <p class="text-base text-[#111827] leading-relaxed">Las empresas pagan por sitios que después no pueden actualizar con facilidad.</p>
+                    </div>
+                    <div class="rounded-[8px] border border-[#E5E7EB] p-8">
+                        <p class="text-base text-[#111827] leading-relaxed">Dificultad de la IA y buscadores para leer y entender las tecnologías con las que se desarrollan los sitios web.</p>
+                    </div>
+                    <div class="rounded-[8px] border border-[#E5E7EB] p-8">
+                        <p class="text-base text-[#111827] leading-relaxed">Para solucionar problemas en otros CMS se requiere instalar plugins que comprometen la seguridad.</p>
+                    </div>
+                    <div class="rounded-[8px] border border-[#E5E7EB] p-8">
+                        <p class="text-base text-[#111827] leading-relaxed">Los CMS no están pensados en SEO y en muchos casos no es prioridad.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impacto en los procesos -->
+        <section class="bg-[#F8F7FF] py-16 md:py-24">
+            <div class="max-w-screen-2xl mx-auto px-6 md:px-12">
+                <span class="font-mono-label text-[#8B5CF6] uppercase tracking-wider">Impacto en los procesos</span>
+                <h2 class="mt-4 text-3xl md:text-4xl font-medium tracking-tight text-[#111827] leading-tight max-w-2xl">Lo que cambia para tu equipo con Stronglify.</h2>
+
+                <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-[8px] border border-[#E5E7EB] p-8 shadow-sm">
+                        <h3 class="text-lg font-medium text-[#111827]">Evita las limitaciones de tecnología y las dependencias técnicas.</h3>
+                    </div>
+                    <div class="bg-white rounded-[8px] border border-[#E5E7EB] p-8 shadow-sm">
+                        <h3 class="text-lg font-medium text-[#111827]">Disminuye los costos de infraestructura y desarrollo.</h3>
+                    </div>
+                    <div class="bg-white rounded-[8px] border border-[#E5E7EB] p-8 shadow-sm">
+                        <h3 class="text-lg font-medium text-[#111827]">Aumenta la capacidad de ejecución y mejora la eficiencia.</h3>
+                    </div>
+                    <div class="bg-white rounded-[8px] border border-[#E5E7EB] p-8 shadow-sm">
+                        <h3 class="text-lg font-medium text-[#111827]">Reduce los tiempos dedicados a mantenimiento, seguridad y actualizaciones.</h3>
+                    </div>
+                    <div class="bg-white rounded-[8px] border border-[#E5E7EB] p-8 shadow-sm">
+                        <h3 class="text-lg font-medium text-[#111827]">Permite que perfiles básicos ejecuten tareas especializadas.</h3>
+                    </div>
+                    <div class="bg-white rounded-[8px] border border-[#E5E7EB] p-8 shadow-sm">
+                        <h3 class="text-lg font-medium text-[#111827]">Crea diseños ágiles, flexibles y sin restricciones.</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Números -->
+        <section class="bg-white py-16 md:py-24">
+            <div class="max-w-screen-2xl mx-auto px-6 md:px-12">
+                <span class="font-mono-label text-[#8B5CF6] uppercase tracking-wider">Resultados</span>
+                <h2 class="mt-4 text-3xl md:text-4xl font-medium tracking-tight text-[#111827] leading-tight max-w-2xl">Los números que han logrado nuestros clientes.</h2>
+
+                <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="rounded-[8px] border border-[#E5E7EB] p-8">
+                        <span class="text-5xl font-medium tracking-tight text-[#111827]">$10.000M+</span>
+                        <p class="mt-3 text-base text-[#4B5563]">Pesos en transacciones de ecommerce y prospectos</p>
+                    </div>
+                    <div class="rounded-[8px] border border-[#E5E7EB] p-8">
+                        <span class="text-5xl font-medium tracking-tight text-[#111827]">40M+</span>
+                        <p class="mt-3 text-base text-[#4B5563]">Visitas generadas a sitios que usan Stronglify</p>
+                    </div>
+                    <div class="rounded-[8px] border border-[#E5E7EB] p-8">
+                        <span class="text-5xl font-medium tracking-tight text-[#111827]">8 días</span>
+                        <p class="mt-3 text-base text-[#4B5563]">Para crear un sitio completo (vs. 1 mes en WordPress)</p>
+                    </div>
+                    <div class="rounded-[8px] border border-[#E5E7EB] p-8">
+                        <span class="text-5xl font-medium tracking-tight text-[#111827]">100/100</span>
+                        <p class="mt-3 text-base text-[#4B5563]">Rendimiento, accesibilidad, prácticas y SEO en Lighthouse</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modelo de cobro -->
+        <section class="bg-[#F8F7FF] py-16 md:py-24">
+            <div class="max-w-screen-2xl mx-auto px-6 md:px-12">
+                <span class="font-mono-label text-[#8B5CF6] uppercase tracking-wider">Modelo de negocio</span>
+                <h2 class="mt-4 text-3xl md:text-4xl font-medium tracking-tight text-[#111827] leading-tight max-w-2xl">¿Cómo es el modelo de cobro como agencia?</h2>
+                <p class="mt-4 text-lg text-[#4B5563] max-w-2xl">Ejemplos ilustrativos de cómo cada agencia podría cobrar sus servicios a clientes finales.</p>
+
+                <div class="mt-10 overflow-x-auto rounded-[8px] border border-[#E5E7EB] bg-white">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="border-b border-[#E5E7EB]">
+                                <th class="p-5 font-mono-label text-[#4B5563] uppercase tracking-wider">Servicio</th>
+                                <th class="p-5 font-mono-label text-[#4B5563] uppercase tracking-wider">Costo promedio cliente final</th>
+                                <th class="p-5 font-mono-label text-[#4B5563] uppercase tracking-wider"># Proyectos</th>
+                                <th class="p-5 font-mono-label text-[#4B5563] uppercase tracking-wider">Facturación al año</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-[#E5E7EB]">
+                                <td class="p-5 text-base font-medium text-[#111827]">SEO programático (Mensual)</td>
+                                <td class="p-5 text-base text-[#4B5563]">Mes desde $700 USD</td>
+                                <td class="p-5 text-base text-[#4B5563]">4</td>
+                                <td class="p-5 text-base text-[#111827] font-medium">$33.600 USD</td>
+                            </tr>
+                            <tr class="border-b border-[#E5E7EB]">
+                                <td class="p-5 text-base font-medium text-[#111827]">Diseño web site completo</td>
+                                <td class="p-5 text-base text-[#4B5563]">Proyecto desde $1.000 USD</td>
+                                <td class="p-5 text-base text-[#4B5563]">5</td>
+                                <td class="p-5 text-base text-[#111827] font-medium">$5.000 USD</td>
+                            </tr>
+                            <tr class="border-b border-[#E5E7EB]">
+                                <td class="p-5 text-base font-medium text-[#111827]">Integración diseño a Stronglify</td>
+                                <td class="p-5 text-base text-[#4B5563]">Proyecto desde $500 USD</td>
+                                <td class="p-5 text-base text-[#4B5563]">7</td>
+                                <td class="p-5 text-base text-[#111827] font-medium">$3.500 USD</td>
+                            </tr>
+                            <tr>
+                                <td class="p-5 text-base font-medium text-[#111827]">Mantenimiento blog (Mensual)</td>
+                                <td class="p-5 text-base text-[#4B5563]">Mes desde $400 USD</td>
+                                <td class="p-5 text-base text-[#4B5563]">3</td>
+                                <td class="p-5 text-base text-[#111827] font-medium">$14.400 USD</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="mt-4 text-sm text-[#4B5563]">Inversión anual en Stronglify: $2.400 USD. Ejemplos ilustrativos.</p>
+            </div>
+        </section>
+
+        <!-- Plan para agencias -->
+        <section id="plan" class="bg-white py-16 md:py-24">
+            <div class="max-w-screen-2xl mx-auto px-6 md:px-12">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8">
+
+                    <div class="lg:col-span-5 flex flex-col lg:sticky lg:top-32 self-start">
+                        <span class="font-mono-label text-[#8B5CF6] uppercase tracking-wider">Plan único</span>
+                        <h2 class="mt-4 text-5xl md:text-6xl font-medium tracking-tight mb-8 text-[#111827] leading-tight">
+                            Para<br>agencias
+                        </h2>
+                        <p class="text-xl text-[#4B5563] leading-relaxed">
+                            Piloto de 30 días disponible. Contrato mínimo de 6 meses.
+                        </p>
+                    </div>
+
+                    <div class="lg:col-span-7">
+                        <div class="bg-[#111827] rounded-[8px] p-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="flex flex-col justify-between">
+                                <div>
+                                    <p class="text-lg text-white/70 font-normal">Plan agencias</p>
+                                    <div class="mt-4 flex items-end gap-1">
+                                        <span class="text-6xl font-medium tracking-tight text-white">$200</span>
+                                        <span class="text-xl text-white/70 mb-1">/mes</span>
+                                    </div>
+                                </div>
+                                <a href="https://stronglify.com" class="mt-8 inline-block text-center bg-[#8B5CF6] text-white rounded-[8px] px-8 py-4 text-lg font-normal hover:bg-[#8B5CF6]/90 transition-colors">Hablar con ventas</a>
+                            </div>
+                            <div>
+                                <p class="text-base text-white/70 font-normal mb-4">Incluye acceso a:</p>
+                                <ul class="space-y-3">
+                                    <li class="flex items-center gap-3 text-base text-white"><svg class="shrink-0 w-5 h-5 text-[#8B5CF6]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg>Hasta 50 sitios</li>
+                                    <li class="flex items-center gap-3 text-base text-white"><svg class="shrink-0 w-5 h-5 text-[#8B5CF6]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg>Hasta 100.000 páginas</li>
+                                    <li class="flex items-center gap-3 text-base text-white"><svg class="shrink-0 w-5 h-5 text-[#8B5CF6]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg>Hasta 20 cuentas</li>
+                                    <li class="flex items-center gap-3 text-base text-white"><svg class="shrink-0 w-5 h-5 text-[#8B5CF6]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg>10 GB de archivos media</li>
+                                    <li class="flex items-center gap-3 text-base text-white"><svg class="shrink-0 w-5 h-5 text-[#8B5CF6]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg>2 revisiones de desempeño SEO al mes</li>
+                                    <li class="flex items-center gap-3 text-base text-white"><svg class="shrink-0 w-5 h-5 text-[#8B5CF6]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg>Master Class mensual para agencias</li>
+                                    <li class="flex items-center gap-3 text-base text-white"><svg class="shrink-0 w-5 h-5 text-[#8B5CF6]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg>Soporte técnico por WhatsApp</li>
+                                    <li class="flex items-center gap-3 text-base text-white"><svg class="shrink-0 w-5 h-5 text-[#8B5CF6]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg>Plantillas de cotización, reporte y seguimiento</li>
+                                    <li class="flex items-center gap-3 text-base text-white"><svg class="shrink-0 w-5 h-5 text-[#8B5CF6]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg>Acceso a Themes Pro</li>
+                                    <li class="flex items-center gap-3 text-base text-white"><svg class="shrink-0 w-5 h-5 text-[#8B5CF6]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg>Capacitación y certificación en la plataforma</li>
+                                    <li class="flex items-center gap-3 text-base text-white"><svg class="shrink-0 w-5 h-5 text-[#8B5CF6]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg>Acceso anticipado a nuevas funcionalidades</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="bg-[#F8F7FF] py-20 border-t border-[#E5E7EB]">
+            <div class="max-w-screen-xl mx-auto px-6 md:px-12 text-center">
+                <h2 class="text-4xl md:text-5xl font-medium tracking-tight text-[#111827] leading-tight">¿Listo para escalar como agencia?</h2>
+                <p class="mt-4 text-xl text-[#4B5563] font-normal">Piloto de 30 días disponible.</p>
+                <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://stronglify.com" class="bg-[#56ffd4] text-[#111827] hover:bg-[#2eedd9] rounded-full px-10 py-4 text-lg font-normal transition-colors shadow-md">Hablar con ventas</a>
+                    <a href="index.html#usecases" class="border border-[#E5E7EB] bg-white hover:border-[#8B5CF6] hover:text-[#8B5CF6] rounded-full px-10 py-4 text-lg font-normal transition-all">Ver demo</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <!-- ─────────────────────────────────────────── -->
+    <!-- END MAIN                                    -->
+    <!-- ─────────────────────────────────────────── -->
+
+    <!-- Footer -->
+    <footer id="newsletter" class="relative overflow-hidden bg-white text-[#111827] px-6 py-16 md:px-12 md:py-24 border-t border-[#E5E7EB]">
+        <div class="absolute inset-0 w-full h-full pointer-events-none" style="filter: blur(60px);">
+            <div class="absolute rounded-full" style="width:60%;height:60%;top:10%;left:-10%;background:radial-gradient(circle at center,rgba(86,255,212,0.25) 0,rgba(86,255,212,0) 70%);animation:moveHorizontal 40s ease infinite;"></div>
+            <div class="absolute rounded-full" style="width:50%;height:50%;top:30%;right:-5%;background:radial-gradient(circle at center,rgba(6,182,212,0.2) 0,rgba(6,182,212,0) 70%);animation:moveInCircle 30s reverse infinite;"></div>
+            <div class="absolute rounded-full" style="width:40%;height:40%;bottom:0;left:30%;background:radial-gradient(circle at center,rgba(86,255,212,0.18) 0,rgba(86,255,212,0) 70%);animation:moveVertical 35s ease infinite;"></div>
+        </div>
+        <style>
+        @keyframes moveVertical { 0%{transform:translateY(-50%)} 50%{transform:translateY(50%)} 100%{transform:translateY(-50%)} }
+        @keyframes moveInCircle { 0%{transform:rotate(0deg)} 50%{transform:rotate(180deg)} 100%{transform:rotate(360deg)} }
+        @keyframes moveHorizontal { 0%{transform:translateX(-50%) translateY(-10%)} 50%{transform:translateX(50%) translateY(10%)} 100%{transform:translateX(-50%) translateY(-10%)} }
+        </style>
+        <div class="relative z-10 max-w-screen-2xl mx-auto">
+            <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-12 border-b border-[#E5E7EB] pb-16">
+                <h2 class="text-4xl md:text-5xl font-medium tracking-tight max-w-2xl leading-tight text-[#111827]">Crea tu sitio web optimizado para SEO o agenda una consulta con nuestro equipo para saber más.</h2>
+                <div class="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
+                    <a href="https://stronglify.com" class="bg-[#56ffd4] text-[#111827] hover:bg-[#2eedd9] rounded-full px-8 py-4 text-lg font-normal text-center transition-all shadow-md">Empezar gratis</a>
+                    <a href="index.html#usecases" class="border border-[#E5E7EB] bg-white hover:bg-[#8B5CF6] hover:border-[#8B5CF6] hover:text-white rounded-full px-8 py-4 text-lg font-normal text-center transition-all shadow-sm">Ver demo</a>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 py-16">
+                <div class="col-span-2 lg:col-span-1 flex flex-col gap-5">
+                    <span class="font-mono-label text-[#8B5CF6] mb-2 uppercase tracking-wider">Empresa</span>
+                    <a href="page.html" class="text-xl font-normal text-[#4B5563] hover:text-[#8B5CF6] transition-colors">Nosotros</a>
+                    <a href="#" class="text-xl font-normal text-[#4B5563] hover:text-[#8B5CF6] transition-colors">Contacto</a>
+                    <a href="roadmap.html" class="text-xl font-normal text-[#4B5563] hover:text-[#8B5CF6] transition-colors">Roadmap</a>
+                </div>
+                <div class="col-span-2 lg:col-span-1 flex flex-col gap-5">
+                    <span class="font-mono-label text-[#8B5CF6] mb-2 uppercase tracking-wider">Producto</span>
+                    <a href="#" class="text-xl font-normal text-[#4B5563] hover:text-[#8B5CF6] transition-colors">SEO Local</a>
+                    <a href="#" class="text-xl font-normal text-[#4B5563] hover:text-[#8B5CF6] transition-colors">Tiendas</a>
+                    <a href="#" class="text-xl font-normal text-[#4B5563] hover:text-[#8B5CF6] transition-colors">Blogs</a>
+                </div>
+                <div class="col-span-2 lg:col-span-1 flex flex-col gap-5">
+                    <span class="font-mono-label text-[#8B5CF6] mb-2 uppercase tracking-wider">Recursos</span>
+                    <a href="#" class="text-xl font-normal text-[#4B5563] hover:text-[#8B5CF6] transition-colors">Documentación</a>
+                    <a href="#" class="text-xl font-normal text-[#4B5563] hover:text-[#8B5CF6] transition-colors">Themes</a>
+                    <a href="#" class="text-xl font-normal text-[#4B5563] hover:text-[#8B5CF6] transition-colors">Desarrolladores</a>
+                </div>
+                <div class="col-span-2 lg:col-span-2 flex flex-col gap-5">
+                    <span class="font-mono-label text-[#8B5CF6] mb-2 uppercase tracking-wider">Newsletter</span>
+                    <div class="flex items-center gap-2 bg-white border border-[#E5E7EB] rounded-full p-2 focus-within:border-[#8B5CF6] transition-colors shadow-sm">
+                        <input type="email" placeholder="tu@email.com" class="bg-transparent border-none outline-none text-xl text-[#111827] px-6 w-full placeholder:text-[#4B5563]">
+                        <button class="bg-[#56ffd4] text-[#111827] hover:bg-[#2eedd9] rounded-full px-8 py-4 text-lg font-normal transition-colors shadow-md">Suscribirse</button>
+                    </div>
+                    <div class="flex items-center gap-4 pt-2">
+                        <span class="font-mono-label text-[#8B5CF6] uppercase tracking-wider">Síguenos</span>
+                        <div class="flex gap-3">
+                            <a href="#" class="border border-[#E5E7EB] bg-white hover:bg-[#8B5CF6] hover:border-[#8B5CF6] hover:text-white rounded-full px-5 py-2 text-base font-normal transition-all shadow-sm">Instagram</a>
+                            <a href="#" class="border border-[#E5E7EB] bg-white hover:bg-[#8B5CF6] hover:border-[#8B5CF6] hover:text-white rounded-full px-5 py-2 text-base font-normal transition-all shadow-sm">X</a>
+                            <a href="#" class="border border-[#E5E7EB] bg-white hover:bg-[#8B5CF6] hover:border-[#8B5CF6] hover:text-white rounded-full px-5 py-2 text-base font-normal transition-all shadow-sm">LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-[#E5E7EB] text-lg text-[#4B5563] font-normal gap-4">
+                <p>© 2025 STRONGLIFY INC.</p>
+                <div class="flex gap-8">
+                    <a href="#" class="hover:text-[#111827] transition-colors">Política de Privacidad</a>
+                    <a href="#" class="hover:text-[#111827] transition-colors">Términos</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body></html>

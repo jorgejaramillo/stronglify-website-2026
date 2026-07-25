@@ -1,0 +1,133 @@
+<html lang="es" class="scroll-smooth"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Documentación para desarrolladores | Stronglify</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet">
+<style>
+body{font-family:Wix Madefor Text,sans-serif}
+.font-mono-label{letter-spacing:.05em;font-family:JetBrains Mono,monospace;font-size:12px;font-weight:600;line-height:1.2}
+.code-block{font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.7;white-space:pre;overflow-x:auto}
+</style>
+</head>
+<body>
+
+<main style="background:#0B0F19;" class="text-white antialiased selection:bg-[#8B5CF6] selection:text-white">
+
+    <!-- Hero -->
+    <section class="pt-36 pb-16 md:pb-20 border-b border-white/10">
+        <div class="max-w-screen-2xl mx-auto px-6 md:px-12">
+            <p class="font-mono-label uppercase tracking-widest text-[#8B5CF6] mb-4">Desarrolladores</p>
+            <h1 class="text-4xl md:text-6xl font-medium tracking-tight leading-tight text-white max-w-3xl">
+                Documentación técnica de Stronglify
+            </h1>
+            <p class="mt-6 text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed">
+                En esta página encontrarás toda la documentación técnica necesaria para trabajar con Stronglify. Aquí podrás acceder a elementos técnicos, códigos HTML, snippets para blocks y todo lo que necesitas para mejorar el SEO técnico de tu sitio web. Nuestro objetivo es darte toda la información para aprovechar al máximo nuestra tecnología.
+            </p>
+        </div>
+    </section>
+
+    <!-- Docs Body -->
+    <section class="py-16 md:py-24">
+        <div class="max-w-3xl mx-auto px-6 md:px-12 flex flex-col gap-16">
+
+            <!-- HTML -->
+            <div>
+                <span class="font-mono-label text-[#8B5CF6] uppercase tracking-wider">01</span>
+                <h2 class="mt-3 text-2xl md:text-3xl font-medium tracking-tight text-white leading-tight">Estructura HTML básica</h2>
+                <p class="mt-4 text-base text-gray-400 leading-relaxed">Cada página de Stronglify es un documento HTML plano. No necesitas frameworks de frontend: los bloques que arrastras en el editor generan HTML semántico directamente.</p>
+                <div class="mt-6 rounded-[8px] border border-white/15 bg-[#111827] p-6">
+                    <pre class="code-block text-gray-300">&lt;section class="hero"&gt;
+  &lt;h1&gt;{{ .Title }}&lt;/h1&gt;
+  &lt;p&gt;{{ .Params.description }}&lt;/p&gt;
+  &lt;a href="/contacto"&gt;Empezar gratis&lt;/a&gt;
+&lt;/section&gt;</pre>
+                </div>
+            </div>
+
+            <!-- Hugo Variables -->
+            <div>
+                <span class="font-mono-label text-[#8B5CF6] uppercase tracking-wider">02</span>
+                <h2 class="mt-3 text-2xl md:text-3xl font-medium tracking-tight text-white leading-tight">Variables Hugo</h2>
+                <p class="mt-4 text-base text-gray-400 leading-relaxed">Stronglify usa la sintaxis de plantillas de <a href="https://gohugo.io" class="text-[#8B5CF6] underline hover:text-[#8B5CF6] transition-colors">Hugo</a>. Cada página tiene acceso a variables como <code class="text-[#56ffd4]">.Title</code>, <code class="text-[#56ffd4]">.Params</code> y <code class="text-[#56ffd4]">.Site</code>.</p>
+                <div class="mt-6 rounded-[8px] border border-white/15 bg-[#111827] p-6">
+                    <pre class="code-block text-gray-300">&lt;title&gt;{{ .Title }} | {{ .Site.Title }}&lt;/title&gt;
+&lt;meta name="description" content="{{ .Params.description }}"&gt;
+&lt;img src="{{ .Params.hero_image }}" alt="{{ .Params.hero_alt }}"&gt;</pre>
+                </div>
+            </div>
+
+            <!-- Hugo Loops -->
+            <div>
+                <span class="font-mono-label text-[#8B5CF6] uppercase tracking-wider">03</span>
+                <h2 class="mt-3 text-2xl md:text-3xl font-medium tracking-tight text-white leading-tight">Loops y condicionales</h2>
+                <p class="mt-4 text-base text-gray-400 leading-relaxed">Para generar SEO programático a escala, usa <code class="text-[#56ffd4]">range</code> sobre un array de datos y <code class="text-[#56ffd4]">if</code> para renderizado condicional.</p>
+                <div class="mt-6 rounded-[8px] border border-white/15 bg-[#111827] p-6">
+                    <pre class="code-block text-gray-300">{{ range $element := $blockTemplateParams.testimonials }}
+  &lt;div class="testimonio"&gt;
+    &lt;p&gt;{{ $element.testimonio }}&lt;/p&gt;
+    &lt;span&gt;— {{ $element.nombre_rol }}&lt;/span&gt;
+  &lt;/div&gt;
+{{ end }}
+
+{{ if .Params.featured }}
+  &lt;span class="badge"&gt;Destacado&lt;/span&gt;
+{{ end }}</pre>
+                </div>
+            </div>
+
+            <!-- Bloques y snippets -->
+            <div>
+                <span class="font-mono-label text-[#8B5CF6] uppercase tracking-wider">04</span>
+                <h2 class="mt-3 text-2xl md:text-3xl font-medium tracking-tight text-white leading-tight">Bloques y snippets</h2>
+                <p class="mt-4 text-base text-gray-400 leading-relaxed">Los bloques (<code class="text-[#56ffd4]">blockTemplateParams</code>) reciben datos dinámicos desde el CMS. Úsalos para crear componentes reutilizables entre páginas.</p>
+                <div class="mt-6 rounded-[8px] border border-white/15 bg-[#111827] p-6">
+                    <pre class="code-block text-gray-300">&lt;div class="grid"&gt;
+  {{ range $item := $blockTemplateParams.features }}
+    &lt;div class="card"&gt;
+      &lt;h3&gt;{{ $item.titulo }}&lt;/h3&gt;
+      &lt;p&gt;{{ $item.descripcion }}&lt;/p&gt;
+    &lt;/div&gt;
+  {{ end }}
+&lt;/div&gt;</pre>
+                </div>
+            </div>
+
+            <!-- SEO técnico -->
+            <div>
+                <span class="font-mono-label text-[#8B5CF6] uppercase tracking-wider">05</span>
+                <h2 class="mt-3 text-2xl md:text-3xl font-medium tracking-tight text-white leading-tight">SEO técnico</h2>
+                <p class="mt-4 text-base text-gray-400 leading-relaxed">Cada página generada incluye metadatos, schema y sitemap automáticamente. Puedes sobreescribir valores por página con variables de Hugo.</p>
+                <div class="mt-6 rounded-[8px] border border-white/15 bg-[#111827] p-6">
+                    <pre class="code-block text-gray-300">&lt;link rel="canonical" href="{{ .Permalink }}"&gt;
+&lt;meta property="og:title" content="{{ .Title }}"&gt;
+&lt;meta property="og:description" content="{{ .Params.description }}"&gt;
+&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ .Title }}"
+}
+&lt;/script&gt;</pre>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 md:py-24 border-t border-white/10">
+        <div class="max-w-screen-2xl mx-auto px-6 md:px-12 text-center">
+            <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-white max-w-xl mx-auto leading-tight">
+                ¿Tienes dudas técnicas? Habla con nuestro equipo.
+            </h2>
+            <a href="https://stronglify.com" class="mt-8 inline-block bg-[#56ffd4] text-[#111827] px-8 py-4 rounded-full text-lg font-normal hover:bg-[#2eedd9] transition-colors shadow-xl shadow-[#56ffd4]/30">
+                Crear cuenta gratis
+            </a>
+        </div>
+    </section>
+
+</main>
+
+</body></html>
